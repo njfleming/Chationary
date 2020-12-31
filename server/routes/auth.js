@@ -18,4 +18,12 @@ router.post(
   }
 );
 
+router.post(
+  '/verify',
+  userController.checkUser,
+  (req, res) =>{
+    return res.send(res.locals.nameExists)
+  }
+)
+
 module.exports = router
